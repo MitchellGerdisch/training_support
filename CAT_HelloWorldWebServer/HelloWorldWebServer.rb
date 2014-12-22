@@ -29,14 +29,13 @@
 # Uses a "Hello World Web Server" server template which is simply a Base Linux ServerTemplate with
 # a script that installs httpd and drops in an index.html file with a line of text defined by an input.
 #
-# PREREQUISITES:
-#   Server Template: A server template called "Hello World Web Server"
+# PREREQUISITES and CAT PREPARATION:
+#   Server Template: A server template called "Hello World Web Server" must exist for the account being used.
 #     This server template must have a rightscript that can be invoked.
 #     The server template must be able to be deployed to the clouds specified in the map_cloud mapping below.
 #   map_account: 
 #     The map_account mapping below must point to an ssh_key that exists in the account and cloud being used.
 #     The hello_world_script key must point to the HREF number for a script that is able to be invoked in the ServerTemplate. See prerequisite above.
-
 
 
 name 'Hello World Web Server - CHANGEME'
@@ -108,7 +107,8 @@ mapping "map_cloud" do {
 }
 end
 
-# Account specific mappings that are needed below in the CAT.
+# *** CHANGEME CHANGEME CHANGEME ***
+# Account specific mappings
 mapping "map_account" do {
   "training_account" => {
     "ssh_key" => "default", # Be sure there is an ssh key called default or change this to an ssh key that does exist for the account. You do NOT need to have access to the private key.
