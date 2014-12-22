@@ -148,7 +148,7 @@ end
 resource "sec_group", type: "security_group" do
   name join(["HelloWorldSecGrp-",@@deployment.href])
   description "Hello World web server security group."
-  cloud "EC2 us-west-1"
+  cloud map( $map_cloud, $param_location, "cloud" )
 end
 
 resource "sec_group_rule_http", type: "security_group_rule" do
