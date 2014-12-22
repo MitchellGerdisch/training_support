@@ -55,7 +55,7 @@ parameter "param_location" do
   label "Cloud" 
   type "string" 
   description "Cloud to deploy in." 
-  allowed_values "AWS-US-East", "AWS-US-West", 
+  allowed_values "AWS-US-East", "AWS-US-West"
   default "AWS-US-East"
 end
 
@@ -211,7 +211,7 @@ end
 #
 # Modify the web page text
 #
-define update_webtext(@web_server, $map_current_account, $map_account, $param_webtext) do
+define update_webtext(@web_server, $map_account, $param_webtext) do
   task_label("Update Web Page")
   $hello_world_script = map( $map_account, "training_account", "hello_world_script" )
   call run_script(@web_server,  join(["/api/right_scripts/", $hello_world_script]), {WEBTEXT: "text:"+$param_webtext}) 
