@@ -1,4 +1,2 @@
-training_support
-================
-
-Files used for training sessions.
+DEPRECATED.
+See rs-services/Training-Support
